@@ -136,8 +136,8 @@
             <form action="{{ route('jobseeker.jobs.apply', $job) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div style="margin-bottom: 1rem;">
-                    <label for="resume"><strong>Upload Resume (PDF, DOC, DOCX):</strong></label><br>
-                    <input type="file" name="resume" required style="margin-top: 0.5rem;">
+                    <label for="resume_url"><strong>Paste the link to your resume (Google Drive, Dropbox, etc.)</strong></label><br>
+                    <input type="url" id="resume_url" name="resume_url" required placeholder="https://">
                 </div>
 
                 <button type="submit" class="btn btn-success">Submit Application</button>

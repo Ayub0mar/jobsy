@@ -20,15 +20,13 @@ class JobseekerController extends Controller
     {
         try {
             $request->validate([
-                'resume' => 'required|file|mimes:pdf,doc,docx|max:2048',
+                'resume_url' => 'required|url|max:2048',
             ]);
-
-            $path = $request->file('resume')->store('resumes', 'public');
 
             Application::create([
                 'job_id' => $job->id,
                 'jobseeker_id' => auth()->id(),
-                'resume_path' => $path,
+                'resume_url' => $request->input('resume_url'),
             ]);
 
             return redirect()->route('jobseeker.application.success');

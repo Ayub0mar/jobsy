@@ -82,9 +82,7 @@
                             <tr>
                                 <td>{{ $application->jobseeker->name }}</td>
                                 <td>
-                                    <a href="{{ asset('storage/' . $application->resume_path) }}" target="_blank" class="btn btn-outline-secondary btn-sm">
-                                        View Resume
-                                    </a>
+                                    <a href="{{ $application->resume_url }}" target="_blank" rel="noopener noreferrer">View Resume</a>
                                 </td>
                                 <td>{{ $application->created_at->format('M d, Y') }}</td>
                                 <td>{{ $application->status ?? 'Pending' }}</td>
